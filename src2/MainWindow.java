@@ -20,16 +20,15 @@ public class MainWindow extends JFrame{
     }
     
     public void deplacer(Forme f, Trajectoire traj){
-	ArrayList<Point> pts = traj.calculerPoints();
-	for(Point p : pts){
-	    f.setX(p.getX());
-	    f.setY(p.getY());
-	    this.actualiser();
-	    
+	while(f.getX() != traj.getFin().getX()){
+	    f.setX(traj.calculerSuivant(new Point(f.getX(), f.getY())).getX());
+	    f.setY(traj.calculerSuivant(new Point(f.getX(), f.getY())).getY());
+	    actualiser();
+	    Toolkit.getDefaultToolkit().sync();//Annule l'effet saccadé sur Linux
 	    try{
-		Thread.sleep(10);
-	    } catch(InterruptedException e){
-		e.printStackTrace();
+		Thread.sleep(30);
+	    } catch(Exception e){
+		System.out.println(e);
 	    }
 	}
     }
