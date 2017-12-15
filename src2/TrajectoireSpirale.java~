@@ -1,10 +1,10 @@
-public class TrajectoireCirculaire extends Trajectoire{
+public class TrajectoireSpirale extends Trajectoire{
 
     private int rayon;
     private int indice;
     private int origX, origY;
     
-    public TrajectoireCirculaire(Point debut, int rayon){
+    public TrajectoireSpirale(Point debut, int rayon){
 	super(debut, debut);
 	this.rayon = rayon;
 	this.indice = 0;

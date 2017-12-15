@@ -3,23 +3,21 @@ import java.util.ArrayList;
 import java.awt.*;
 
 public class Panneau extends JPanel{
-    private ArrayList<Forme> formes;
+
+    private Forme f;
     
-    public Panneau(){
-	this.formes = new ArrayList<>();
-    }
-    
-    public void ajouterForme(Forme f){
-	this.formes.add(f);
-    }
-    
-    public void paintComponent(Graphics g){
-	for(Forme f : formes){
-	    f.dessiner(g);
-	}
+    public Panneau(Forme f){
+	this.f = f;
     }
 
-    public ArrayList<Forme> getFormes(){
-	return this.formes;
+    public Forme getForme(){
+	return this.f;
     }
+	
+    
+    public void paintComponent(Graphics g){
+	this.f.dessiner(g);
+    }
+
+    
 }

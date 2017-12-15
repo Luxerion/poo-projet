@@ -1,9 +1,9 @@
 import java.awt.*;
 
-public class Elipse extends Forme{
+public class Ellipse extends Forme{
     protected int rayonX, rayonY;
 
-    public Elipse(Color color, int x, int y, int rayonX, int rayonY){
+    public Ellipse(Color color, int x, int y, int rayonX, int rayonY){
 	super(color, x, y);
 	this.rayonX = rayonX;
 	this.rayonY = rayonY;
@@ -11,7 +11,7 @@ public class Elipse extends Forme{
 
     public void dessiner(Graphics g){
 	g.setColor(this.color);
-	g.fillOval(this.x, this.y, this.rayonX, this.rayonY);
+	g.fillOval(this.x-this.rayonX, this.y-this.rayonY, this.rayonX*2, this.rayonY*2);
     }
 	
 }
